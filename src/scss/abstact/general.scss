@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+// estilos repetitivos
+.request-invite{
+    // Botón "request invite"
+    @include width-height(145px, 40px);
+    font-weight: 700;
+    font-size: .8em;
+    color: $Very-Light-Gray;
+    background: linear-gradient(to right, $Lime-Green, $Bright-Cyan);
+    border: none;
+    @include border-radius(30px);
+    @include transition(filter, .1s, 0s, ease);
+    
+    &:hover{ @include filter }
+}
+
+// colores por defecto
+.title-color{ 
+    color: $Dark-Blue; 
+    font-weight: 400; 
+}
+.text-color{ color: $Grayish-Blue; }
+
+// Responsive
+@media screen and (max-width: 1300px){
+    body{ font-size: 17px; }
+}
+
+@media screen and (max-width: 800px){
+    body{ font-size: 16px; }
+}
+
+@media screen and (max-width: 480px){
+    body{ font-size: 17px; }
+}
+
+@media screen and (max-width: 380px){
+    body{ font-size: 16px; }
+}

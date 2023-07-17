@@ -1,0 +1,49 @@
+// Ancho y Alto de caja
+@mixin width-height($width, $height){
+    width: $width;
+    height: $height;
+}
+
+// Display's
+@mixin flex($gap, $alignY, $alignX){
+    display: flex;
+    align-items: $alignY;
+    justify-content: $alignX;
+    gap: $gap;
+}
+
+@mixin grid($gap){
+    display: grid;
+    gap: $gap;
+}
+
+// Border radius
+@mixin border-radius($border){
+    border-radius: $border;
+}
+
+// Transicion para efecto "hover"
+@mixin transition($property, $time, $delay, $cubic-bezier){
+    transition: $property $time $delay $cubic-bezier;
+}
+
+// Filter para efecto "hover"
+@mixin filter{
+    filter: brightness(1.1);
+    cursor: pointer; 
+}
+
+@mixin transformX($translate){
+    transform: translateX($translate);
+}
+
+// Clip Path 
+@mixin hiddeMenuMobile{
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+    @include transition(clip-path, .2s, .1s, ease);
+}
+
+@mixin showMenuMobile{
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    @include transition(clip-path, .2s, .3s, ease);
+}

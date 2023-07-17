@@ -1,0 +1,145 @@
+// Estilos para desktop <= 1440px 
+.menu{
+    // Contenedor principal del menú
+    position: sticky;
+    top: 0;
+    @include width-height(100vw, 80px);
+    @include flex(0, center, space-between);
+    padding: 0 10%;
+    background-color: $White;
+    z-index: 100;
+
+    // Enlaces del menú
+    .menu-links{
+        @include width-height(auto, 100%);
+        @include flex(20px, center, initial);
+        font-size: .95em;
+        list-style: none;
+
+        li{ 
+            height: 100%;
+
+            a{
+                position: relative;
+                @include flex(0, center, initial);
+                height: 100%;
+                text-decoration: none;
+    
+                &::before{
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    @include transformX(-50%);
+                    @include width-height(0, 3px);
+                    @include transition(width, .1s, 0s, ease);
+                    background: linear-gradient(to right, $Lime-Green, $Bright-Cyan);
+                }
+    
+                &:hover::before{ width: 100%; }
+            }
+        }
+    }
+    
+    // Contenedor de los botones del menú mobile
+    .menu-mobile-buttons{ display: none; }
+
+    // Light box
+    .light-box{ display: none; }
+}
+
+// Estilos para desktop <= 800px 
+@media screen and (max-width: 800px){
+    .menu{ 
+        // Enlaces del menú
+        padding: 0 6%; 
+        
+        // Botón "request invite"
+        .request-invite{ width: 135px; }
+    }
+}
+
+// Estilos para desktop <= 480px 
+@media screen and (max-width: 480px){
+    .menu{ 
+        // Contenedor principal del menú
+        height: 60px;
+        
+        // Enlaces del menú
+        .menu-links{ 
+            position: fixed;
+            top: 85px;
+            left: 50%;
+            @include transformX(-50%);
+            width: calc(90% - 6px);
+            height: auto;
+            padding: 10px 0;
+            flex-direction: column;
+            gap: 0;
+            background-color: $White;
+            @include border-radius(10px);
+            @include hiddeMenuMobile;
+
+            li{
+                @include width-height(100%, auto);
+                
+                a{  
+                    @include width-height(100%, 40px);
+                    @include flex(0, center, center);
+                    
+                    &:hover{ color: $Dark-Blue }
+
+                    &::before{ 
+                       @include width-height(0, 100%);
+                       opacity: .4;
+                    }
+
+                }
+            } 
+        }
+
+        .show-menu-links{ @include showMenuMobile; }
+        
+        // Botón "request invite"
+        .request-invite{ display: none; }
+        
+        // Contenedor de los botones del menú mobile
+        .menu-mobile-buttons{ 
+            position: relative;
+            @include flex(0, center, center);
+            @include width-height(20px, 19px);
+
+            button{
+                position: absolute;
+                @include width-height(100%, 100%);
+                background-color: transparent;
+                border: none;
+                @include transition(opacity, .1s, 0s, ease);
+
+                img{ @include width-height(100%, 100%); }
+            }
+
+            .hidde{ opacity: 0; pointer-events: none; }
+        }
+        
+        // Light box
+        .light-box{
+            position: fixed;
+            top: 60px;
+            left: 0;
+            display: block;
+            @include width-height(100vw, 100vh);
+            background: linear-gradient($Dark-Blue, #0002);
+            z-index: -1;
+            opacity: 0;
+            @include transition(opacity, .2s, .4s, ease);
+            pointer-events: none;
+        }
+
+        .show-light-box{ 
+            opacity: 1; 
+            @include transition(opacity, .4s, 0s, ease);
+            pointer-events: initial;
+        }
+    }
+}

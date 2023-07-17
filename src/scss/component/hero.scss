@@ -1,0 +1,66 @@
+// Estilos para desktop <= 1440px
+.hero{
+    // Contenedor principal
+    @include width-height(100vw, 500px);
+    @include flex(0, center, initial);
+    padding: 0 0 0 10%;
+    background-color: $Very-Light-Gray;
+
+    // Contenedor "hero texts"
+    .hero-texts{
+        @include width-height(410px, auto);
+        min-width: 410px;
+
+        h1{ font-size: 2.5em; }
+
+        p{  
+            padding: 25px 0;
+            font-size: 16.2px;
+        }
+    }
+
+    // Ilustración "mackups" - hero
+    .hero-illustration{
+        @include width-height(100%, 100%);
+        @include flex(0, initial, end);
+       /* @include width-height(100%, 100%);
+        background-image: url("/assets/icons/bg-intro-desktop.svg");
+        background-size: 100%;
+        //background-position: top;
+        background-repeat: no-repeat;
+        transform: translate(160px, -50px);*/
+        .illustration{ 
+            @include width-height(80%, calc(100% + 230px));
+            max-width: 600px;
+            min-width: 600px;
+            transform: translateY(-100px);
+        }
+    }
+}
+
+// Responsive
+@media screen and (max-width: 480px){
+    .hero{
+        flex-direction: column-reverse;
+        padding: 0 6%;
+
+        // Contenedor "hero texts"
+        .hero-texts{
+            width: 100%;
+            min-width: auto;
+            text-align: center;
+
+            p{  
+                padding: 20px 0;
+                font-size: 15px;
+                line-height: 1.5;
+            }
+        }
+
+        .hero-illustration{
+            transform: none;
+        }
+    }
+}
+
+@media screen and (max-width: 350px){ .hero, .hero-texts, h1{ font-size: 14px; } }
