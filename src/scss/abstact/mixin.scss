@@ -37,6 +37,10 @@
     transform: translateX($translate);
 }
 
+@mixin transform($scale){
+    transform: scale($scale);
+}
+
 // Clip Path 
 @mixin hiddeMenuMobile{
     clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);

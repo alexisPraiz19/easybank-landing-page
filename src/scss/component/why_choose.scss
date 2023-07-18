@@ -22,7 +22,7 @@
         @include flex(15px, initial, initial);
 
         .reason{
-            @include width-height(260px, auto);
+            height: auto;
             font-size: .91em;
             line-height: 1.3;
 
