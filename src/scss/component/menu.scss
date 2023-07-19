@@ -59,6 +59,12 @@
     }
 }
 
+// Estilos para <= 660px
+@media screen and (max-width: 660px){
+    // Botón "request invite"
+    .menu{ .request-invite{ display: none; } }
+}
+
 // Estilos para desktop <= 480px 
 @media screen and (max-width: 480px){
     .menu{ 
@@ -99,9 +105,6 @@
         }
 
         .show-menu-links{ @include showMenuMobile; }
-        
-        // Botón "request invite"
-        .request-invite{ display: none; }
         
         // Contenedor de los botones del menú mobile
         .menu-mobile-buttons{ 

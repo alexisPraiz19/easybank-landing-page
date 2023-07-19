@@ -42,7 +42,7 @@
 @media screen and (max-width: 480px){
     .hero{
         flex-direction: column-reverse;
-        padding: 0 6%;
+        padding: 0 6% 100px 6%;
 
         // Contenedor "hero texts"
         .hero-texts{

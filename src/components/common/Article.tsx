@@ -8,7 +8,7 @@ interface Article{
 export default function Article({img, by, title, text}:Article): JSX.Element{
     return (
         <article className="article">
-            <a href="#"  className="article-texts" onClick={(e) => e.preventDefault()}>
+            <a href=""  className="article-texts" onClick={(e) => e.preventDefault()}>
                 <img src={img} alt="image-article"/>
                 
                 <div>

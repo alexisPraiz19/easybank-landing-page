@@ -1,0 +1,130 @@
+// Estilos desktop <= 1440px
+.footer{
+    // Contenedor principal
+    @include width-height(100vw, auto);
+    padding: 50px 9%;
+    @include grid(0);
+    grid-template-columns: 160px max-content 1fr;
+    background-color: $Dark-Blue;
+
+    // Footer icons
+    .icons-footer{
+        @include width-height(100%, 90px);
+        @include flex(0, initial, space-between);
+        flex-direction: column;
+
+        img{ width: max-content }
+        
+        .list-icons-footer{
+            @include flex(12px, center, initial);
+            list-style: none;
+        }
+    }
+
+    // Links footer
+    .links-footer{
+        margin-left: 100px;
+        @include grid(0);
+        grid-template-columns: repeat(2, max-content);
+        column-gap: 90px;
+        font-size: .93em;
+        list-style: none;
+
+        li{ 
+            @include flex(0, center, initial);
+            a{
+                text-decoration: none;
+                color: $White;
+            }
+        }
+    }
+
+    // Button footer
+    .button-footer{
+        justify-self: end;
+        @include flex(0, initial, space-between);
+        flex-direction: column;
+
+        button{  align-self: end; }
+
+        p{
+            color: $White;
+            font-size: .8em;
+            text-align: center;
+        }
+    }
+}
+
+// Responsive
+@media screen and (max-width: 800px){
+    .footer{
+        // Contenedor principal
+        padding: 50px 5%;
+
+        // Footer icons
+        .icons-footer{ img{ @include transform(.85) } }
+
+        // Links footer
+        .links-footer{ 
+            margin-left: 40px; 
+            column-gap: 40px;
+        }
+        
+        // Button footer
+        .button-footer{ button{ align-self: center; } }
+    }
+}
+
+@media screen and (max-width: 660px){
+    .footer{
+        // Contenedor principal
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+        row-gap: 50px;
+       
+        // Footer icons
+        .icons-footer{  align-items: center; }
+
+        // Links footer
+        .links-footer{
+           margin: 0;
+           justify-content: center;
+        }
+
+        // Button footer
+        .button-footer{
+           transform: translateX(50%);
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .footer{
+        // Contendor principal
+        grid-template-columns: 1fr;
+        grid-auto-rows: max-content;
+        row-gap: 60px;
+
+        // Footer icons
+        .icons-footer{  
+            height: 70px; 
+
+            img{ @include transform(.9); }
+        }
+
+        // Links footer
+        .links-footer{
+            grid-template-columns: 1fr;
+            gap: 10px;
+
+            li{ justify-content: center; }
+        }
+
+        // Button footer
+        .button-footer{
+            justify-self: center;
+            gap: 30px;
+            transform: translateX(0);
+        }
+    }
+}
