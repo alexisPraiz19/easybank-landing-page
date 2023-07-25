@@ -31,7 +31,7 @@
             top: -185px;
             left: 40px;
             @include width-height(800px, 140%);
-            background-image: url("assets/icons/bg-intro-desktop.svg");
+            background-image: url("/assets/icons/bg-intro-desktop.svg");
             background-size: calc(100% + 110px);
             background-repeat: no-repeat;
         }
@@ -88,7 +88,7 @@
 
             &::before{
                 top: 0;
-                background-image: url("assets/icons/bg-intro-mobile.svg");
+                background-image: url("/assets/icons/bg-intro-mobile.svg");
                 background-size: calc(85% + 110px) 580px;
             }
     
