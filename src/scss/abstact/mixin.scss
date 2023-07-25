@@ -37,6 +37,10 @@
     transform: translateX($translate);
 }
 
+@mixin transformY($translate){
+    transform: translateY($translate);
+}
+
 @mixin transform($scale){
     transform: scale($scale);
 }
