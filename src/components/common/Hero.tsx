@@ -14,7 +14,9 @@ export default function Hero(): JSX.Element{
                 <button className="request-invite">Request invite</button>
             </div>
 
-            <figure className="hero-illustration">  </figure>
+            <figure className="hero-illustration"> 
+                <img src="assets/images/image-mockups.png" alt="image-mockups" className="illustration"/>
+            </figure>
         </div>
     );
 };
